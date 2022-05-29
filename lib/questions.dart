@@ -1,11 +1,6 @@
-import 'package:flutter/material.dart';
+class Question {
+  late String questionText;
+  late bool questionAnswer;
 
-class Questions {
-  String? questionText;
-  bool? questionAnswer;
-
-  Questions({String? a, bool? b}) {
-    questionText = a;
-    questionAnswer = b;
-  }
+  Question(String s, bool bool);
 }
