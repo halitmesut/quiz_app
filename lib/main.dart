@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'quiz_brain.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.grey.shade900,
-        body: SafeArea(
+        body: const SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: QuizPage(),
           ),
         ),
@@ -21,6 +23,8 @@ class MyApp extends StatelessWidget {
 }
 
 class QuizPage extends StatefulWidget {
+  const QuizPage({Key? key}) : super(key: key);
+
   @override
   _QuizPageState createState() => _QuizPageState();
 }
@@ -31,19 +35,19 @@ class _QuizPageState extends State<QuizPage> {
 
   void iconCheck() {
     scoreKeeper.add(
-      Icon(Icons.check, color: Colors.green),
+      const Icon(Icons.check, color: Colors.green),
     );
     scoreKeeper.add(
-      SizedBox(width: 10),
+      const SizedBox(width: 10),
     );
   }
 
   void iconClose() {
     scoreKeeper.add(
-      Icon(Icons.close, color: Colors.red),
+      const Icon(Icons.close, color: Colors.red),
     );
     scoreKeeper.add(
-      SizedBox(width: 10),
+      const SizedBox(width: 10),
     );
   }
 
@@ -58,9 +62,9 @@ class _QuizPageState extends State<QuizPage> {
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Text(
-                quizBrain.getQuestionText() as String,
+                quizBrain.getQuestionText(),
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white, fontSize: 25),
+                style: const TextStyle(color: Colors.white, fontSize: 25),
               ),
             ),
           ),
@@ -70,7 +74,7 @@ class _QuizPageState extends State<QuizPage> {
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: TextButton(
-              child: Text("True"),
+              child: const Text("True"),
               style: ButtonStyle(
                 foregroundColor: MaterialStateProperty.all(Colors.white),
                 backgroundColor: MaterialStateProperty.all(Colors.green[500]),
@@ -93,7 +97,7 @@ class _QuizPageState extends State<QuizPage> {
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: TextButton(
-              child: Text("False"),
+              child: const Text("False"),
               style: ButtonStyle(
                 foregroundColor: MaterialStateProperty.all(Colors.white),
                 backgroundColor: MaterialStateProperty.all(Colors.red[500]),
